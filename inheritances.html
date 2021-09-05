@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+
+<body>
+    <h1>Program Contoh Penggunaan Class</h1>
+    <p id="demo"></p>
+    <script>
+        class Hat {
+            constructor(brand) {
+                this.hatname = brand;
+            }
+            present() {
+                return 'My brand hat is ' + this.hatname;
+            }
+        }
+
+        class Model extends Hat {
+            constructor(brand, mod) {
+                super(brand);
+                this.model = mod;
+            }
+            show() {
+                return this.present() + ', it is a ' + this.model + ' model';
+            }
+        }
+        let say = new Model("Rei", "Bucket");
+        document.getElementById("demo").innerHTML = say.show();
+    </script>
+</body>
+
+</html>
